@@ -8,3 +8,12 @@ WHERE NOT EXISTS (
   FROM page_likes pl 
   WHERE p.page_id = pl.page_id
 );
+
+
+         -- Approach 2. Using - WHERE NOT IN condition -- 
+SELECT page_id 
+FROM pages p
+WHERE page_id NOT IN (
+  SELECT page_id 
+  FROM page_lieks
+);
